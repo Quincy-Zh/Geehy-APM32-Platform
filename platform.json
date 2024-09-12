@@ -1,0 +1,54 @@
+{
+  "name": "geehy_apm32",
+  "title": "Geehy APM32",
+  "description": "APM32 MCU",
+  "homepage": "https://www.geehy.com/product/second/mcu",
+  "license": "MIT",
+  "keywords": [
+    "dev-platform",
+    "ARM",
+    "Cortex-M",
+    "Geehy",
+    "APM32"
+  ],
+  "engines": {
+    "platformio": "^5"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "version": "0.0.1",
+  "frameworks": {
+    "geehy-apm32": {
+      "script": "builder/frameworks/geehy_apm.py",
+      "description": "Geehy APM32 MCU SDK",
+      "homepage": "https://www.geehy.com/",
+      "title": "Geehy APM32 SDK"
+    }
+  },
+  "packages": {
+    "toolchain-gccarmnoneeabi": {
+      "type": "toolchain",
+      "owner": "platformio",
+      "version": ">=1.60301.0,<1.80000.0",
+      "optionalVersions": [
+        "~1.60301.0",
+        "~1.80201.0",
+        "~1.90201.0",
+        "~1.120301.0"
+      ]
+    },
+    "framework-geehy-apm32f4": {
+      "type": "framework",
+      "owner": "geehy",
+      "optional": false
+    },
+    "tool-jlink": {
+      "type": "uploader",
+      "optional": true,
+      "owner": "platformio",
+      "version": "^1.63208.0"
+    }
+  }
+}

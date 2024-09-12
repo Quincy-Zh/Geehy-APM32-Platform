@@ -1,0 +1,31 @@
+{
+  "build": {
+    "core": "apm32",
+    "cpu": "cortex-m4",
+    "extra_flags": "-DAPM32F4 -DAPM32F40X",
+    "f_cpu": "168000000L",
+    "mcu": "apm32f407igt6",
+    "product_line": "APM32F40x",
+    "variant": "APM32F4xx"
+  },
+  "debug": {
+    "jlink_device": "APM32F407IG",
+    "openocd_target": "apm32f407ig",
+    "svd_path": "APM32F40x.svd"
+  },
+  "frameworks": [
+    "geehy-apm32"
+  ],
+  "name": "APM32F407 TINY",
+  "upload": {
+    "maximum_ram_size": 131072,
+    "maximum_size": 1048576,
+    "protocol": "cmsis-dap",
+    "protocols": [
+      "cmsis-dap",
+      "jlink"
+    ]
+  },
+  "url": "https://www.geehy.com/design/hardware_detail/32",
+  "vendor": "Geehy"
+}

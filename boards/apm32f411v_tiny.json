@@ -1,0 +1,31 @@
+{
+  "build": {
+    "core": "apm32",
+    "cpu": "cortex-m4",
+    "extra_flags": "-DAPM32F4 -DAPM32F411",
+    "f_cpu": "168000000L",
+    "mcu": "apm32f411vet6",
+    "product_line": "APM32F4xx",
+    "variant": "APM32F4xx"
+  },
+  "debug": {
+    "jlink_device": "APM32F411VE",
+    "svd_path": "APM32F411.svd"
+  },
+  "frameworks": [
+    "cmsis",
+    "apm32cube"
+  ],
+  "name": "APM32F411V TINY",
+  "upload": {
+    "maximum_ram_size": 131072,
+    "maximum_size": 524288,
+    "protocol": "cmsis-dap",
+    "protocols": [
+      "cmsis-dap",
+      "jlink"
+    ]
+  },
+  "url": "https://www.geehy.com/design/hardware_detail/33",
+  "vendor": "Geehy"
+}
