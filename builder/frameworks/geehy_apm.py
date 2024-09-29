@@ -52,7 +52,6 @@ def prepare_startup_file(src_path):
 #
 # Allow using custom linker scripts
 #
-
 if not board.get("build.ldscript", ""):
     env.Replace(LDSCRIPT_PATH=get_linker_script())
 

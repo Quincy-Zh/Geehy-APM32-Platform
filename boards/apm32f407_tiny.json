@@ -9,8 +9,11 @@
     "variant": "APM32F4xx"
   },
   "debug": {
+    "default_tools": [
+      "cmsis-dap"
+    ],
     "jlink_device": "APM32F407IG",
-    "openocd_target": "apm32f407ig",
+    "openocd_target": "APM32F407IG",
     "svd_path": "APM32F40x.svd"
   },
   "frameworks": [

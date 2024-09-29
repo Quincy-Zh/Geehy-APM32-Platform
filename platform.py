@@ -42,30 +42,7 @@ class Geehy_apm32Platform(PlatformBase):
         #    self.packages["tool-ldscripts-ststm32"]["optional"] = False
 
         default_protocol = board_config.get("upload.protocol") or ""
-        if variables.get("upload_protocol", default_protocol) == "dfu":
-            dfu_package = "tool-dfuutil"
-            if board.startswith(("portenta", "opta", "nicla", "giga")):
-                dfu_package = "tool-dfuutil-arduino"
-                self.packages.pop("tool-dfuutil")
-            else:
-                self.packages.pop("tool-dfuutil-arduino")
-            self.packages[dfu_package]["optional"] = False
-
-        if board == "mxchip_az3166":
-            self.frameworks["arduino"][
-                "package"] = "framework-arduinostm32mxchip"
-            self.frameworks["arduino"][
-                "script"] = "builder/frameworks/arduino/mxchip.py"
-            self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.60301.0"
-
-        if "zephyr" in variables.get("pioframework", []):
-            for p in self.packages:
-                if p in ("tool-cmake", "tool-dtc", "tool-ninja"):
-                    self.packages[p]["optional"] = False
-            self.packages["toolchain-gccarmnoneeabi"]["version"] = "~1.120301.0"
-            if not IS_WINDOWS:
-                self.packages["tool-gperf"]["optional"] = False
-
+        
         # configure J-LINK tool
         jlink_conds = [
             "jlink" in variables.get(option, "")
@@ -119,8 +96,9 @@ class Geehy_apm32Platform(PlatformBase):
         if "tools" not in debug:
             debug["tools"] = {}
 
-        # BlackMagic, J-Link, ST-Link
+        # J-Link, CMSIS-DAP
         for link in ("jlink", "cmsis-dap"):
+            
             if link not in upload_protocols or link in debug["tools"]:
                 continue
                 
